@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #f8fafc;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --card-bg: rgba(255, 255, 255, 0.9);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f6f7ff 0%, #e9eeff 100%);
+    min-height: 100vh;
+}
+
+/* Navbar, buttons, grids, cards, etc. omitted for brevity - keep as is */
+
+/* --- Attendance Page Styles --- */
+
+.filter-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-bar label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+select, input[type=date] {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1.5px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+    background: white;
+    min-width: 150px;
+}
+
+select:focus, input[type=date]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+table.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+table.attendance-table th,
+table.attendance-table td {
+    padding: 12px 18px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+table.attendance-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    user-select: none;
+}
+
+table.attendance-table tr:hover {
+    background: #f0f8ff;
+}
+
+.status-select {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1.5px solid #bbb;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    min-width: 110px;
+    user-select: none;
+}
+
+.status-select.present {
+    background-color: #e6f4ea;
+    border-color: #3bb54a;
+    color: #276630;
+}
+
+.status-select.absent {
+    background-color: #fdecea;
+    border-color: #d93025;
+    color: #7a2e28;
+}
+
+.status-select.excused {
+    background-color: #fff4db;
+    border-color: #f7b500;
+    color: #6a5200;
+}
+
+.status-select:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-submit {
+    margin-top: 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+    box-shadow: 0 8px 22px rgba(79, 70, 229, 0.6);
+}
+
+.btn-submit:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Alert styles */
+.alert {
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    backdrop-filter: blur(5px);
+}
+
+.alert-error {
+    background: #fdecea;
+    color: #b71c1c;
+    border: 1.5px solid #d93025;
+}
+
+.alert-success {
+    background: #e6f4ea;
+    color: #276630;
+    border: 1.5px solid #3bb54a;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+    .filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    table.attendance-table th, table.attendance-table td {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
+
+.no-events-container {
+    margin: 2rem auto;           /* centré horizontalement + espacement haut */
+    max-width: 600px;
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    color: #444;
+}
+
+.no-events-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.no-events-container p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.no-events-container i {
+    font-size: 3rem;
+    color: #6366f1;
+    margin-bottom: 1rem;
+}

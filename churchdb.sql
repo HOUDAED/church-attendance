@@ -70,6 +70,7 @@ CREATE TABLE events (
     location VARCHAR(100),
     church_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by INT,
     FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE,
     FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE SET NULL
 );
@@ -95,3 +96,5 @@ CREATE INDEX idx_event_date ON events(event_date);
 
 -- Attendance indexes
 CREATE INDEX idx_attendance_date ON attendances(attendance_date);
+
+ALTER TABLE `roles` ADD `description` VARCHAR(250) NOT NULL AFTER `name`;
