@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Church Attendance System
 
 A PHP-based system for managing church attendance and members.
@@ -161,3 +162,6 @@ church-attendance/
 ## Contact
 
 [Your Contact Information]
+=======
+# church-attendance
+>>>>>>> ec9c61832c1c0944a9465cee6cddfbd3456f24a0
